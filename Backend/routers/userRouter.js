@@ -20,7 +20,7 @@ router.get('/getbyemail/:email',(req,res) => {
     Model.find({email : req.params.email})
     .then((result) => {
     res.json(result);
-}).catch((err));
+}).catch((err)); 
 res.json(err);
 })
 

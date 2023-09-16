@@ -20,13 +20,13 @@ app.use('/product', productRouter);
 app.get('/', (req, res) => {
     res.send('resposnse from express');
 });
-app.get('/home', () => (req, res) => {
+app.get('/home',(req, res) => {
     res.send('resposnse from home');
 });
-app.get('/add', () => (req, res) => {
+app.get('/add',(req, res) => {
     res.send('resposnse from add');
 });
-app.get('/getall', () => (req, res) => {
+app.get('/getall',(req, res) => {
     res.send('resposnse from getall');
 });
 
