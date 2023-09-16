@@ -31,7 +31,8 @@ router.get('/getbyemail/:email',(req,res) => {
     res.json(result);
 }).catch((err) => {
 res.json(err);
-})
+});
+});
 
 
 
