@@ -14,17 +14,7 @@ router.post('/add', (req, res) => {
         res.json(err);
     });
 });
-// : denote url parameter
-router.get('/getbyemail/:email',(req,res) => {
-    console.log(req.params.email);
-    Model.find({email : req.params.email})
-    .then((result) => {
-    res.json(result);
-}).catch((err)); 
-res.json(err);
-})
-
-router.get('/getbyid', (req, res) => {
+router.get('/getall', (req, res) => {
     Model.find({})
     .then((result) => {
         res.json(result);
@@ -32,6 +22,18 @@ router.get('/getbyid', (req, res) => {
         res.json(err);
     });
 });
+
+// : denote url parameter
+router.get('/getbyemail/:email',(req,res) => {
+    console.log(req.params.email);
+    Model.find({email : req.params.email})
+    .then((result) => {
+    res.json(result);
+}).catch((err) => {
+res.json(err);
+})
+
+
 
 router.get('/getbyid', (req, res) => {
     res.send('response from user getbyid')
