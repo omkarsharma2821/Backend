@@ -1,13 +1,28 @@
 const express = require('express');
+// const { Model } = require('mongoose');
+const Model = require('../models/productModel');
 
 const router = express.Router();
 
-router.get('/add', (req, res) => {
-    res.send('response from product add')
+router.post('/add', (req, res) => {
+    console.log(req.body);
+
+    new Model(req.body).save()
+    .then((result) =>{
+        res.json(result);
+    }).catch((err) =>{
+        console.log(err);
+        res.json(err);
+    })
 });
 
 router.get('/getall', (req, res) => {
-    res.send('response from product getall')
+    Model.find({})
+    .then((result) =>{
+        res.json(result)
+    }).catch((err) =>{
+        res.json(err);
+    })
 });
 
 router.get('/getbyid', (req, res) => {

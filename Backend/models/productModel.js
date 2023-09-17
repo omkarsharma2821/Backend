@@ -1,11 +1,11 @@
 const {Schema, model} = require('../connection');
 
 const myschema = new Schema({
-    title : String,
+    color : String,
     price : Number,
     brand : String,
-    model : String,
+    category : String,
     category : String
 });
 
-module.exports = model('laptop', myschema);
+module.exports = model('t-shirt', myschema);
