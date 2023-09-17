@@ -10,9 +10,11 @@ const app = express();
 const port = 5000;
 
 //  middlewares express
-app.use(express.json());
+app.use(express.json()); // if not put data will be undefined 
 app.use('/user', userRouter);
 app.use('/product', productRouter);
+
+// asynchornous wait nhi krta dusre function ka phle ho jata hai
 
 
 // routes
