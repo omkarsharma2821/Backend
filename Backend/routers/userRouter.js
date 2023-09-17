@@ -35,7 +35,6 @@ res.json(err);
 });
 
 
-
 router.get('/getbyid', (req, res) => {
     res.send('response from user getbyid')
 });
