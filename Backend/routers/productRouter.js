@@ -25,8 +25,32 @@ router.get('/getall', (req, res) => {
     })
 });
 
-router.get('/getbyid', (req, res) => {
-    res.send('response from product getbyid')
+router.get('/getbysize/:size', (req, res) => {
+    console.log(req.params.size);
+    Model.find({size : req.params.size})
+        .then((result) => {
+            res.json(result);
+        }).catch((err) => {
+            res.json(err);
+        })
+});
+router.get('/getbybrand/:brand', (req, res) => {
+    console.log(req.params.brand);
+    Model.find({brand : req.params.brand})
+        .then((result) => {
+            res.json(result);
+        }).catch((err) => {
+            res.json(err);
+        })
+});
+router.get('/getbycategory/:category', (req, res) => {
+    console.log(req.params.category);
+    Model.find({category : req.params.category})
+        .then((result) => {
+            res.json(result);
+        }).catch((err) => {
+            res.json(err);
+        })
 });
 
 router.get('/update', (req, res) => {
