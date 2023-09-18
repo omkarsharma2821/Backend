@@ -3,6 +3,7 @@
 const express = require('express');
 const userRouter = require('./routers/userRouter');
 const productRouter  = require('./routers/productRouter');
+const cors = require('cors');
 
 //intialize express
 
@@ -11,6 +12,9 @@ const port = 5000;
 
 //  middlewares express
 app.use(express.json()); // if not put data will be undefined 
+app.use(cors({
+    origin: ['http://localhost:3000']
+}));
 app.use('/user', userRouter);
 app.use('/product', productRouter);
 
