@@ -66,6 +66,9 @@ router.put('/update/:id', (req, res) => {
     })
 });
 
+
+
+
 router.delete('/delete/:id', (req, res) => {
     Model.findByIdAndDelete(req.params.id)
     .then((result) => {
@@ -74,5 +77,17 @@ router.delete('/delete/:id', (req, res) => {
         res.json(err);
     })
 });
+
+router.post('/authenticate' , (req, res) => {
+    Model.findOne(req.body)
+    .then((result) => {
+        if(result)res.json(result)
+        else res.status(400).json({message : "Login Failed"});
+    })
+    .catch((err) => {
+        console.log(err)
+        res.json(err)
+    });
+})
 
 module.exports = router;

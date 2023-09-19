@@ -53,12 +53,22 @@ router.get('/getbycategory/:category', (req, res) => {
         })
 });
 
-router.get('/update', (req, res) => {
-    res.send('response from product update')
+router.put('/update/:id', (req, res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body)
+    .then((result) => {
+        res.json(result);
+    }).catch((err) => {
+        res.json(err);
+    })
 });
 
-router.get('/delete', (req, res) => {
-    res.send('response from product delete')
+router.get('/delete/:id', (req, res) => {
+    Model.findByIdAndDelete(req.params.id)
+    .then((result) => {
+        res.json(result);
+    }).catch((err) => {
+        res.json(err);
+    })
 });
 
 module.exports = router;
