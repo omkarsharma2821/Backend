@@ -68,7 +68,7 @@ router.get('/delete/:id', (req, res) => {
         res.json(result);
     }).catch((err) => {
         res.json(err);
-    })
+    }) 
 });
 
 module.exports = router;
