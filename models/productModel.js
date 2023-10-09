@@ -5,7 +5,6 @@ const myschema = new Schema({
     price : Number,
     brand : String,
     category : String,
-    category : String
 });
 
 module.exports = model('t-shirt', myschema);

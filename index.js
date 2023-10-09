@@ -35,6 +35,13 @@ app.get('/add',(req, res) => {
 app.get('/getall',(req, res) => {
     res.send('resposnse from getall');
 });
+app.get('/update', (req , res)=>{
+    res.send('response from update')
+});
+
+app.get('/delete', (req , res)=>{
+    res.send('response from delete')
+});
 
 app.listen(port, () => {
     console.log('server started');
